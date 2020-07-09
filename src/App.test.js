@@ -14,6 +14,17 @@ it('renders without crashing', () => {
   const wrapper = shallow(<App />) // Shallow render to Enzyme's DOM instead of a web browser using ReactDOM.render
 })
 
+it('contains a h1 with the text "The count is"', () => {
+  const wrapper = shallow(<App />)
+  expect(wrapper.find('h1').text()).toContain('The count is')
+})
+
+// it('contains a div with the text "learn react"', () => {
+//   const wrapper = shallow(<App />) // Shallow render to Enzyme's DOM instead of a web browser using ReactDOM.render
+//   // console.log(wrapper.debug()) // Outputs the wapper to the console
+//   expect(wrapper.find('div').text()).toContain('learn react') // Within the given wrapper, find a div element that contains the text 'learn react'
+// })
+
 // Template test from create-react-app
 
 // test('renders learn react link', () => {
