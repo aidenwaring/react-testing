@@ -31,6 +31,8 @@ it('starts counter at 0', () => {
 
 it('clicking button increments counter', () => {
   const wrapper = shallow(<App />)
+  wrapper.find('button').simulate('click')
+  expect(wrapper.find('h1').text()).toContain('The count is 1')
 })
 
 // it('contains a div with the text "learn react"', () => {
