@@ -1,9 +1,23 @@
+// Run to add Enzyme to yarn package
+// yarn add enzyme jest-enzymne enzyme-adapter-react-16 -D
 import React from 'react';
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
+// Changing default test library to enzyme, importing Enzyme and the react adapter
+import Enzyme, { shallow } from "enzyme"
+import EnzymeAdapter from "enzyme-adapter-react-16"
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// Configure React Enzyme adapter
+Enzyme.configure({ adapter: new EnzymeAdapter() })
+
+it('renders without crashing', () => {
+  const wrapper = shallow(<App />) // Shallow render to Enzyme's DOM instead of a web browser using ReactDOM.render
+})
+
+// Template test from create-react-app
+
+// test('renders learn react link', () => {
+//   const { getByText } = render(<App />);
+//   const linkElement = getByText(/learn react/i);
+//   expect(linkElement).toBeInTheDocument();
+// });
