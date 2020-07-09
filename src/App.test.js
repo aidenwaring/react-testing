@@ -19,6 +19,20 @@ it('contains a h1 with the text "The count is"', () => {
   expect(wrapper.find('h1').text()).toContain('The count is')
 })
 
+it('renders increment button', () => {
+  const wrapper = shallow(<App />)
+  expect(wrapper.find('button').text()).toBe('Increment')
+})
+
+it('starts counter at 0', () => {
+  const wrapper = shallow(<App />)
+  expect(wrapper.find('h1').text()).toContain('The count is 0')
+})
+
+it('clicking button increments counter', () => {
+  const wrapper = shallow(<App />)
+})
+
 // it('contains a div with the text "learn react"', () => {
 //   const wrapper = shallow(<App />) // Shallow render to Enzyme's DOM instead of a web browser using ReactDOM.render
 //   // console.log(wrapper.debug()) // Outputs the wapper to the console
